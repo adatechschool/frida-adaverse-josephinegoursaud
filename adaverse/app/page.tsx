@@ -83,6 +83,9 @@ export default function Home() {
         <div className="flex items-center gap-4">
           <select className="bg-[#1f1f1f] border border-gray-600 rounded px-4 py-2 text-white text-sm cursor-pointer focus:outline-none focus:ring-2 focus:ring-pink-400">
             <option value="all">Tous les projets</option>
+            {Array.isArray(promotions) && promotions.map((promo) => (
+              <option key={promo.id} value={promo.id}>{promo.nom}</option>
+            ))}
           </select>
 
           <button
@@ -100,7 +103,16 @@ export default function Home() {
           ? projects.find(p => p.id === Number(projetAdaId))
           : null;
         console.log("projetAda:", projetAda);
-        const projetName = projetAda ? projetAda.titre : "AdaOpte";
+        
+ let projetName = "Projets"; // Valeur par défaut
+
+if (projetAdaId === "1") projetName = "AdaQuizz";
+if (projetAdaId === "2") projetName = "AdaDataviz";
+if (projetAdaId === "3") projetName = "AdaOpte";
+if (projetAdaId === "4") projetName = "Adaction";
+if (projetAdaId === "5") projetName = "AdaCheck Events";
+if (projetAdaId === "6") projetName = "AdaOpte"; 
+
 
         return (
           <section key={projetAdaId} className="mb-16">
@@ -131,7 +143,6 @@ export default function Home() {
       {studentProjects.length === 0 && (
         <div className="text-center text-gray-400 mt-20">
           <p className="text-xl">Aucun projet pour le moment</p>
-          <p className="mt-2">Soyez le premier à soumettre un projet !</p>
         </div>
       )}
 
