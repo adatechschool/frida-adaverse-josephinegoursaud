@@ -83,10 +83,7 @@ export default function Home() {
         <div className="flex items-center gap-4">
           <select className="bg-[#1f1f1f] border border-gray-600 rounded px-4 py-2 text-white text-sm cursor-pointer focus:outline-none focus:ring-2 focus:ring-pink-400">
             <option value="all">Tous les projets</option>
-            {Array.isArray(promotions) && promotions.map((promo) => (
-              <option key={promo.id} value={promo.id}>{promo.nom}</option>
-            ))}
-          </select>
+            </select>
 
           <button
             onClick={() => setModalOpen(true)}
@@ -111,7 +108,7 @@ if (projetAdaId === "2") projetName = "AdaDataviz";
 if (projetAdaId === "3") projetName = "AdaOpte";
 if (projetAdaId === "4") projetName = "Adaction";
 if (projetAdaId === "5") projetName = "AdaCheck Events";
-if (projetAdaId === "6") projetName = "AdaOpte"; 
+
 
 
         return (
