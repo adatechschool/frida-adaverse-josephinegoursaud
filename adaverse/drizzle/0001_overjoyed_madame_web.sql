@@ -1,0 +1,1 @@
+ALTER TABLE "projets_etudiants" DROP COLUMN "illustration";
